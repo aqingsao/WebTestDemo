@@ -1,6 +1,5 @@
 <div>
     <form action="../exchange/" method="POST">
-        <div>$exchange.fromCurrency------$exchange.toCurrency</div>
         <div class="from">
             <label for="fromCurrency">From:</label>
             <select name="fromCurrency">
@@ -28,7 +27,7 @@
             </select>
 
             <label for="toAmount">Amount:</label>
-            <input name="toAmount" value="$exchange.toAmount"/>
+            <input name="toAmount" value="$exchange.toAmount" disabled="disabled"/>
         </div>
         <input type="submit" value="Exchange"/>
     </form>

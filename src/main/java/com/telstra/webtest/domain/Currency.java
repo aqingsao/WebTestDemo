@@ -10,6 +10,10 @@ public enum Currency {
         this.description = description;
     }
 
+    public double getRate(Currency to) {
+        return this.getRate() * 1.0 / to.getRate();
+    }
+
     public String getDescription() {
         return description;
     }

@@ -4,6 +4,8 @@ import com.telstra.webtest.domain.Currency;
 import com.telstra.webtest.form.ExchangeForm;
 import com.telstra.webtest.form.ExchangeFormBuilder;
 import com.telstra.webtest.services.ExchangeService;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/exchange")
 public class ExchangeController {
 
+    @Autowired
     private ExchangeService exchangeService;
 
     @RequestMapping("/")
@@ -24,18 +29,19 @@ public class ExchangeController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public ModelAndView exchange(@ModelAttribute("exchange") ExchangeForm exchangeForm, BindingResult result) {
-        System.out.println("form: " + exchangeForm);
-        if (result.hasErrors()) {
-            throw new RuntimeException("Binding result error " + result.getAllErrors());
-        }
-        exchangeForm.setToAmount(1000.0);
+        double toAmount = exchangeService.exchange(exchangeForm.getFromCurrency(), exchangeForm.getToCurrency(), exchangeForm.getFromAmount());
+        exchangeForm.setToAmount(toAmount);
+
         return new ModelAndView("exchange/index");
     }
 
     @ModelAttribute("exchange")
-    public ExchangeForm setUpForm(ExchangeForm exchangeForm) {
-        if (exchangeForm == null) {
-            return new ExchangeFormBuilder().build();
+    public ExchangeForm setUpForm(ExchangeForm exchangeForm, HttpServletRequest request) {
+        if (!StringUtils.isEmpty(request.getParameter("fromCurrency"))) {
+            exchangeForm.setFromCurrency(request.getParameter("fromCurrency"));
+        }
+        if (!StringUtils.isEmpty(request.getParameter("toCurrency"))) {
+            exchangeForm.setToCurrency(request.getParameter("toCurrency"));
         }
         return exchangeForm;
     }
