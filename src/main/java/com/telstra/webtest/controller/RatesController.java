@@ -13,18 +13,7 @@ import java.util.Map;
 public class RatesController {
     @RequestMapping("/")
     public ModelAndView index() {
-
         ModelMap model = new ModelMap();
-        return new ModelAndView("index", model);
-    }
-
-    @RequestMapping("/")
-    public void addRate(){
-        System.out.println("test-------");
-    }
-
-    @RequestMapping("/")
-    public void createRate(){
-        System.out.println("create rate");
+        return new ModelAndView("rates/index", model);
     }
 }

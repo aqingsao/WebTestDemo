@@ -1,0 +1,21 @@
+package com.telstra.webtest.form;
+
+import com.telstra.webtest.domain.Currency;
+
+public class ExchangeFormBuilder {
+
+    private Currency fromCurrency = Currency.USD;
+    private Currency toCurrency = Currency.RMB;
+    private double toAmount = 0;
+    private double fromAmount = 0;
+
+    public ExchangeForm build() {
+        ExchangeForm exchangeForm = new ExchangeForm();
+        exchangeForm.setFromCurrency(fromCurrency.name());
+        exchangeForm.setFromAmount(fromAmount);
+        exchangeForm.setToCurrency(toCurrency.name());
+        exchangeForm.setToAmount(toAmount);
+
+        return exchangeForm;
+    }
+}
