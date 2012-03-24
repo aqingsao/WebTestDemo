@@ -1,0 +1,3 @@
+#foreach($rate in $rates)
+    <li></li>
+#end
