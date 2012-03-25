@@ -117,7 +117,7 @@
                 <version>2.12</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/acceptance/**/*Test.java</exclude>
+                        <exclude>**/acceptance/webdriver/*Test.java</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -128,10 +128,10 @@
                 <configuration>
                     <skip>false</skip>
                     <includes>
-                        <include>**/acceptance/**/*Test.java</include>
+                        <include>**/acceptance/webdriver/*Test.java</include>
                     </includes>
                     <excludes>
-                        <exclude>**/acceptance/**/BaseTest.java</exclude>
+                        <exclude>**/acceptance/webdriver/BaseTest.java</exclude>
                     </excludes>
                 </configuration>
                 <executions>
