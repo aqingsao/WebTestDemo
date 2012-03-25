@@ -1,5 +1,5 @@
 <div>
-    <form action="../exchange/" method="POST">
+    <form class="exchange" action="../exchange/" method="POST">
         <div class="from">
             <label for="fromCurrency">From:</label>
             <select name="fromCurrency">

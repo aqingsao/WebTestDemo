@@ -1,19 +1,35 @@
 package com.telstra.webtest.acceptance.pages;
 
-import org.openqa.selenium.WebDriver;
+import com.telstra.webtest.domain.Currency;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class ExchangePage extends BasePage {
-    public ExchangePage(WebDriver driver) {
-        super(driver);
-    }
-
-    @Override
-    protected String getHost() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
 
     @Override
     protected String getPath() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return "/exchange/";
+    }
+
+    public void exchange(Currency fromCurrency, Currency toCurrency, double fromAmount) {
+        WebElement fromCurrencyElement = webDriver.findElement(By.name("fromCurrency"));
+        fromCurrencyElement.findElement(By.cssSelector("option[value=" + fromCurrency.name() + "]")).setSelected();
+
+        WebElement fromAmountElement = webDriver.findElement(By.name("fromAmount"));
+        fromAmountElement.clear();
+        fromAmountElement.sendKeys(String.valueOf(fromAmount));
+
+        WebElement toCurrencyElement = webDriver.findElement(By.name("toCurrency"));
+        toCurrencyElement.findElement(By.cssSelector("option[value=" + toCurrency.name() + "]")).setSelected();
+
+        submit_form("form.exchange");
+    }
+
+    private void submit_form(String selector) {
+        webDriver.findElement(By.cssSelector(selector)).submit();
+    }
+
+    public double getToAmount() {
+        return Double.valueOf(webDriver.findElement(By.cssSelector("form.exchange input[name='toAmount']")).getValue());
     }
 }
