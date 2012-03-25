@@ -20,4 +20,8 @@ public class Navigator {
             throw new RuntimeException("Failed to page " + pageClass.getName(), e);
         }
     }
+
+    public void closeBrowers() {
+        webDriver.quit();
+    }
 }

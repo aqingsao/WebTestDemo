@@ -12,7 +12,7 @@ public abstract class BasePage {
     }
 
     protected String getHost() {
-        return "localhost:8080/WebTestDemo/";
+        return "localhost:8080/WebTestDemo";
     }
 
     protected abstract String getPath();
@@ -30,6 +30,13 @@ public abstract class BasePage {
             return page;
         } catch (Exception e) {
             throw new RuntimeException("Failed to page " + pageClass.getName(), e);
+        }
+    }
+
+    protected void sleepInSeconds(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000L);
+        } catch (InterruptedException e) {
         }
     }
 }
