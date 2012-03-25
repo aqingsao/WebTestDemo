@@ -5,9 +5,9 @@
 /*HTML5 tags*/
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {display:block;}
 
-input[type="text"]{border: 1px #949494 solid; padding:4px;}
+input[type="text"]{border: 1px #949494 solid; padding:5px 6px;border-radius:4px;}
 select{width:100%;outline: 0;display: block;height: 25px;color:#000;border:1px #949494 solid;padding:4px;}
-.btn{padding:4px 8px;}
+.btn{padding:4px 12px;}
 
 .exchange-main,.result-main{width:300px; border:1px #3963ad solid; padding:0 0 20px; margin:40px auto}
 .exchange-main h2,.result-main h2{display: block; padding-left: 10px; line-height: 40px; background:#3963ad; color: #fff; font-weight: bold;}
