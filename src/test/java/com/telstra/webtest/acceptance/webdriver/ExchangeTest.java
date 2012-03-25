@@ -1,7 +1,8 @@
-package com.telstra.webtest.acceptance;
+package com.telstra.webtest.acceptance.webdriver;
 
 import com.telstra.webtest.acceptance.pages.ExchangePage;
 import com.telstra.webtest.domain.Currency;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -26,5 +27,23 @@ public class ExchangeTest extends BaseTest {
 
         double toAmount = exchangePage.getToAmount();
         assertThat(toAmount, is(1.0));
+    }
+
+    @Test
+    public void should_exchange_100_RMB_to_16_67_AUD() {
+        ExchangePage exchangePage = navigator.toExchangePage();
+        exchangePage.exchange(Currency.RMB, Currency.AUD, 100);
+
+        double toAmount = exchangePage.getToAmount();
+        assertThat(toAmount, is(16.67));
+    }
+
+    @Ignore
+    public void should_show_error_message_when_exchange_minus_100_RMB_to_AUD() {
+        ExchangePage exchangePage = navigator.toExchangePage();
+        exchangePage.exchange(Currency.RMB, Currency.AUD, -100);
+
+        double toAmount = exchangePage.getToAmount();
+        assertThat(toAmount, is(16.67));
     }
 }

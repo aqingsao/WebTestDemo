@@ -1,4 +1,4 @@
-package com.telstra.webtest.acceptance;
+package com.telstra.webtest.acceptance.webdriver;
 
 import com.telstra.webtest.acceptance.pages.Navigator;
 
