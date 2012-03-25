@@ -28,11 +28,11 @@ public class ExchangeController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ModelAndView exchange(@ModelAttribute("exchange") ExchangeForm exchangeForm, BindingResult result) {
+    public ModelAndView exchange(@ModelAttribute("exchange") ExchangeForm exchangeForm) {
         double toAmount = exchangeService.exchange(exchangeForm.getFromCurrency(), exchangeForm.getToCurrency(), exchangeForm.getFromAmount());
         exchangeForm.setToAmount(toAmount);
 
-        return new ModelAndView("exchange/index");
+        return new ModelAndView("exchange/result");
     }
 
     @ModelAttribute("exchange")

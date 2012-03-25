@@ -1,7 +1,6 @@
-
 <div class="result-main">
     <h2>Currency Converter</h2>
-    <p>100 AUD</p>
+    <p>$!exchange.fromAmount $!exchange.fromCurrency.name()</p>
     <p>can be exchanged to</p>
-    <p>600 RMB.</p>
+    <p>$!exchange.toAmount $!exchange.toCurrency.name().</p>
 </div>
