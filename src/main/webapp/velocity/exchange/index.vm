@@ -36,18 +36,27 @@
 
 <div class="exchange-main">
     <h2>Currency Converter</h2>
+
     <form class="exchange" action="../exchange/" method="POST">
         <ul>
-            <li><label>Amount : </label><input type="text" value=""/></li>
-            <li><label>From : </label><select name="currency">
-                <option>USD</option>
-                <option>RMB</option>
-                <option>AUD</option>
+            <li><label>Amount : </label><input name="fromAmount" value="$exchange.fromAmount"/></li>
+            <li><label>From : </label><select name="fromCurrency">
+                #foreach($currency in $currencies)
+                    #if($currency == $exchange.fromCurrency)
+                        <option value="$currency.name()" selected="selected">$currency.description</option>
+                    #else
+                        <option value="$currency.name()">$currency.description</option>
+                    #end
+                #end
             </select></li>
-            <li><label>To : </label><select name="currency">
-                <option>USD</option>
-                <option>RMB</option>
-                <option>AUD</option>
+            <li><label>To : </label><select name="toCurrency">
+                #foreach($currency in $currencies)
+                    #if($currency == $exchange.toCurrency)
+                        <option value="$currency.name()" selected="selected">$currency.description</option>
+                    #else
+                        <option value="$currency.name()">$currency.description</option>
+                    #end
+                #end
             </select></li>
             <li><input type="submit" value="Exchange"/></li>
         </ul>
