@@ -1,6 +1,7 @@
 package com.telstra.webtest.acceptance.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class ExchangeResultPage extends BasePage {
     @Override
@@ -9,6 +10,7 @@ public class ExchangeResultPage extends BasePage {
     }
 
     public double getToAmount() {
-        return Double.valueOf(webDriver.findElement(By.cssSelector("form.exchange input[name='toAmount']")).getValue());
+        WebElement element = webDriver.findElement(By.cssSelector(".toAmount"));
+        return Double.valueOf(element.getText());
     }
 }
