@@ -4,7 +4,7 @@ import com.telstra.webtest.domain.Currency;
 
 public class ExchangeFormBuilder {
 
-    private Currency fromCurrency = Currency.USD;
+    private Currency fromCurrency = Currency.AUD;
     private Currency toCurrency = Currency.RMB;
     private double toAmount = 0;
     private double fromAmount = 0;

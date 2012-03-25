@@ -22,11 +22,7 @@ public class ExchangePage extends BasePage {
         WebElement toCurrencyElement = webDriver.findElement(By.name("toCurrency"));
         toCurrencyElement.findElement(By.cssSelector("option[value=" + toCurrency.name() + "]")).setSelected();
 
-        submit_form("form.exchange");
-    }
-
-    private void submit_form(String selector) {
-        webDriver.findElement(By.cssSelector(selector)).submit();
+        webDriver.findElement(By.cssSelector("form.exchange")).submit();
     }
 
     public double getToAmount() {

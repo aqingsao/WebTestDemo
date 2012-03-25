@@ -1,7 +1,7 @@
 package com.telstra.webtest.domain;
 
 public enum Currency {
-    RMB(1, "Chinese Yuan"), USD(6, "Australia Dollar");
+    RMB(1, "Chinese Yuan"), AUD(6, "Australia Dollar");
     private int rate;
     private String description;
 

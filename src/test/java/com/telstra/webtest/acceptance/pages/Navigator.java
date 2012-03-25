@@ -3,7 +3,7 @@ package com.telstra.webtest.acceptance.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class PageFactory {
+public class Navigator {
     private static WebDriver webDriver = new ChromeDriver();
 
     public ExchangePage toExchangePage() {

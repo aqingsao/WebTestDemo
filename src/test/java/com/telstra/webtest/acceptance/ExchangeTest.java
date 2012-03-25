@@ -12,8 +12,8 @@ public class ExchangeTest extends BaseTest {
 
     @Test
     public void should_exchange_1_AUD_to_6_RMB() {
-        ExchangePage exchangePage = pageFactory.toExchangePage();
-        exchangePage.exchange(Currency.USD, Currency.RMB, 1.0);
+        ExchangePage exchangePage = navigator.toExchangePage();
+        exchangePage.exchange(Currency.AUD, Currency.RMB, 1);
 
         double toAmount = exchangePage.getToAmount();
         assertThat(toAmount, is(6.0));
@@ -21,6 +21,10 @@ public class ExchangeTest extends BaseTest {
 
     @Test
     public void should_exchange_6_RMB_to_1_AUD() {
+        ExchangePage exchangePage = navigator.toExchangePage();
+        exchangePage.exchange(Currency.RMB, Currency.AUD, 6);
 
+        double toAmount = exchangePage.getToAmount();
+        assertThat(toAmount, is(1.0));
     }
 }
