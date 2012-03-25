@@ -126,6 +126,7 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
+                    <skip>false</skip>
                     <includes>
                         <include>**/acceptance/*Test.java</include>
                     </includes>
