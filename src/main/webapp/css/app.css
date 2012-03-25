@@ -5,6 +5,14 @@
 /*HTML5 tags*/
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {display:block;}
 
+input[type="text"]{border: 1px #949494 solid; padding:4px;}
 
-.exchange-main{width:300px; border:1px #3963ad solid; padding:0 0 20px;}
-.exchange-main h2{display: block; line-height: 20px; background:#3963ad; color: #fff; font-weight: bold;}
+.exchange-main,.result-main{width:300px; border:1px #3963ad solid; padding:0 0 20px; margin:40px auto}
+.exchange-main h2,.result-main h2{display: block; padding-left: 10px; line-height: 40px; background:#3963ad; color: #fff; font-weight: bold;}
+.exchange-main ul.exchange{padding:10px;}
+.exchange-main ul.exchange li{margin-top:10px;}
+.exchange-main ul.exchange label{display:block; font-weight: bold;}
+.exchange-main ul.exchange select{display:block; border:1px #949494 solid; width:100%; line-height: 20px;}
+.exchange-main ul.exchange .exchange-btn{margin-top:15px;}
+
+
