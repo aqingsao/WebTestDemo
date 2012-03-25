@@ -7,7 +7,7 @@ import static junit.framework.Assert.assertEquals;
 public class MathUtilsTest {
     @Test
     public void should_round_100_to_100() {
-        assertEquals(100.0, MathUtils.round(100));
+        assertEquals(100.0, MathUtils.round(200));
     }
 
     @Test
