@@ -38,12 +38,11 @@ public class ExchangeTest extends BaseTest {
         assertThat(toAmount, is(16.67));
     }
 
-    @Ignore
+    @Test
     public void should_show_error_message_when_exchange_minus_100_RMB_to_AUD() {
         ExchangePage exchangePage = navigator.toExchangePage();
         exchangePage.exchange(Currency.RMB, Currency.AUD, -100);
 
-        double toAmount = exchangePage.getToAmount();
-        assertThat(toAmount, is(16.67));
+        assertThat(exchangePage.hasErrorMessage("Please check your amount"), is(true));
     }
 }

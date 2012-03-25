@@ -28,4 +28,8 @@ public class ExchangePage extends BasePage {
     public double getToAmount() {
         return Double.valueOf(webDriver.findElement(By.cssSelector("form.exchange input[name='toAmount']")).getValue());
     }
+
+    public boolean hasErrorMessage(String message) {
+        return false;
+    }
 }

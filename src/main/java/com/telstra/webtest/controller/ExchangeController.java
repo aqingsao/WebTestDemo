@@ -28,11 +28,18 @@ public class ExchangeController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ModelAndView exchange(@ModelAttribute("exchange") ExchangeForm exchangeForm) {
+    public ModelAndView exchange(@ModelAttribute("exchange") ExchangeForm exchangeForm, BindingResult result) {
+        if (result.hasErrors()) {
+            return new ModelAndView("exchange/index", "error", "Please check your amount");
+        }
+        if (exchangeForm.getFromAmount() < 0) {
+            return new ModelAndView("exchange/index", "error", "Please check your amount");
+        }
+
         double toAmount = exchangeService.exchange(exchangeForm.getFromCurrency(), exchangeForm.getToCurrency(), exchangeForm.getFromAmount());
         exchangeForm.setToAmount(toAmount);
 
-        return new ModelAndView("exchange/result");
+        return new ModelAndView("redirect:exchange/result");
     }
 
     @ModelAttribute("exchange")
