@@ -4,7 +4,7 @@
 
 /*HTML5 tags*/
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {display:block;}
-
+html,body{color:#414140}
 input[type="text"]{border: 1px #949494 solid; padding:5px 6px;border-radius:4px;}
 select{width:100%;outline: 0;display: block;height: 25px;color:#000;border:1px #949494 solid;padding:4px;}
 .btn{padding:4px 12px;}
@@ -18,6 +18,7 @@ select{width:100%;outline: 0;display: block;height: 25px;color:#000;border:1px #
 
 .result-main p{ padding:0 10px; margin-top: 8px;}
 .result-main input{ margin:20px 0 0 10px;}
+.result-main .toAmount{ font-size:30px; font-weight:bold; color: #000;}
 
 .errorMessage{line-height: 30px; background: #f00; color: #fff; text-align: left; text-indent: 10px;}
 
