@@ -1,42 +1,9 @@
-##<div>
-##    <form class="exchange" action="../exchange/" method="POST">
-##        <div class="from">
-##            <label for="fromCurrency">From:</label>
-##            <select name="fromCurrency">
-##                #foreach($currency in $currencies)
-##                    #if($currency == $exchange.fromCurrency)
-##                        <option value="$currency.name()" selected="selected">$currency.description</option>
-##                    #else
-##                        <option value="$currency.name()">$currency.description</option>
-##                    #end
-##                #end
-##            </select>
-##            <label for="fromAmount">Amount:</label>
-##            <input name="fromAmount" value="$exchange.fromAmount"/>
-##        </div>
-##        <div class="to">
-##            <label for="toCurrency">To:</label>
-##            <select name="toCurrency">
-##                #foreach($currency in $currencies)
-##                    #if($currency == $exchange.toCurrency)
-##                        <option value="$currency.name()" selected="selected">$currency.description</option>
-##                    #else
-##                        <option value="$currency.name()">$currency.description</option>
-##                    #end
-##                #end
-##            </select>
-##
-##            <label for="toAmount">Amount:</label>
-##            <input name="toAmount" value="$exchange.toAmount" disabled="disabled"/>
-##        </div>
-##        <input type="submit" value="Exchange"/>
-##    </form>
-##</div>
-
-
 <div class="exchange-main">
     <h2>Currency Converter</h2>
 
+    #if($error)
+        <div class="errorMessage" display="none">$error</div>
+    #end
     <form action="../exchange/" method="POST">
         <ul class="exchange">
             <li><label>Amount : </label><input name="fromAmount" type="text" value="$exchange.fromAmount"/></li>
