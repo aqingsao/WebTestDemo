@@ -3,5 +3,5 @@
     <p style="margin-top: 20px;"><b class="fromAmount">$!exchange.fromAmount</b> <span class="fromCurrency">$!exchange.fromCurrency.name()</span></p>
     <p>can be exchanged to</p>
     <p><b class="toAmount">$!exchange.toAmount</b> <span class="toCurrency">$!exchange.toCurrency.name()</span>.</p>
-    <input type="button" value="Back" onclick="window.location.href='../exchange/'">
+    <input type="button" class="btn" value="Back" onclick="window.location.href='../exchange/'">
 </div>

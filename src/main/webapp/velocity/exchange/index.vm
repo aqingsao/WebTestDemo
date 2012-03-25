@@ -1,6 +1,5 @@
 <div class="exchange-main">
     <h2>Currency Converter</h2>
-
     #if($error)
         <div class="errorMessage" display="none">$error</div>
     #end
@@ -25,7 +24,7 @@
                     #end
                 #end
             </select></li>
-            <li><input class="exchange-btn" type="submit" value="Exchange"/></li>
+            <li><input class="exchange-btn btn" type="submit" value="Exchange"/></li>
         </ul>
     </form>
 </div>
