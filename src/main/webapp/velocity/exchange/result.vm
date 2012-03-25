@@ -1,7 +1,7 @@
 <div class="result-main">
     <h2>Currency Converter</h2>
-    <p>$!exchange.fromAmount $!exchange.fromCurrency.name()</p>
+    <p><span class="fromAmount">$!exchange.fromAmount</span> <span class="fromCurrency">$!exchange.fromCurrency.name()</span></p>
     <p>can be exchanged to</p>
-    <p>$!exchange.toAmount $!exchange.toCurrency.name().</p>
-    <input type="button" value="back">
+    <p><span class="toAmount">$!exchange.toAmount</span> <span class="toCurrency">$!exchange.toCurrency.name()</span>.</p>
+    <a href="../exchange/">Back</a>
 </div>
