@@ -8,6 +8,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,12 +44,20 @@ public class ExchangeController {
     }
 
     @ModelAttribute("exchange")
-    public ExchangeForm setUpForm(ExchangeForm exchangeForm, HttpServletRequest request) {
+    public ExchangeForm setUpForm(ExchangeForm exchangeForm, BindingResult result, HttpServletRequest request) {
         if (!StringUtils.isEmpty(request.getParameter("fromCurrency"))) {
             exchangeForm.setFromCurrency(request.getParameter("fromCurrency"));
         }
         if (!StringUtils.isEmpty(request.getParameter("toCurrency"))) {
             exchangeForm.setToCurrency(request.getParameter("toCurrency"));
+        }
+        if (!StringUtils.isEmpty(request.getParameter("fromAmount"))) {
+            try {
+                double fromAmount = Double.valueOf(request.getParameter("fromAmount"));
+                exchangeForm.setFromAmount(fromAmount);
+            } catch (Exception e) {
+                result.addError(new ObjectError("toAmount", "Please check your amount"));
+            }
         }
         return exchangeForm;
     }
