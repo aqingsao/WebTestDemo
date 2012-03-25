@@ -11,7 +11,7 @@ public class ExchangePage extends BasePage {
         return "/exchange/";
     }
 
-    public void exchange(Currency fromCurrency, Currency toCurrency, double fromAmount) {
+    public ExchangeResultPage exchange(Currency fromCurrency, Currency toCurrency, double fromAmount) {
         WebElement fromCurrencyElement = webDriver.findElement(By.name("fromCurrency"));
         fromCurrencyElement.findElement(By.cssSelector("option[value=" + fromCurrency.name() + "]")).setSelected();
 
@@ -23,6 +23,8 @@ public class ExchangePage extends BasePage {
         toCurrencyElement.findElement(By.cssSelector("option[value=" + toCurrency.name() + "]")).setSelected();
 
         webDriver.findElement(By.cssSelector("form.exchange")).submit();
+
+        return asPage(ExchangeResultPage.class);
     }
 
     public double getToAmount() {

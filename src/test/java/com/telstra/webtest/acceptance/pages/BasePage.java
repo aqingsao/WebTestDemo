@@ -1,8 +1,6 @@
 package com.telstra.webtest.acceptance.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
@@ -19,8 +17,19 @@ public abstract class BasePage {
 
     protected abstract String getPath();
 
-    public void setWebDriver(WebDriver webDriver) {
+    public void initWithWebDriver(WebDriver webDriver) {
         this.webDriver = webDriver;
         this.wait = new WebDriverWait(webDriver, 60);
+        org.openqa.selenium.support.PageFactory.initElements(webDriver, this);
+    }
+
+    protected <T extends BasePage> T asPage(Class<T> pageClass) {
+        try {
+            T page = pageClass.newInstance();
+            page.initWithWebDriver(this.webDriver);
+            return page;
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to page " + pageClass.getName(), e);
+        }
     }
 }

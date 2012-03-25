@@ -14,8 +14,7 @@ public class Navigator {
         try {
             T t = pageClass.newInstance();
             webDriver.get(t.getUrl());
-            t.setWebDriver(webDriver);
-            org.openqa.selenium.support.PageFactory.initElements(webDriver, t);
+            t.initWithWebDriver(webDriver);
             return t;
         } catch (Exception e) {
             throw new RuntimeException("Failed to page " + pageClass.getName(), e);
