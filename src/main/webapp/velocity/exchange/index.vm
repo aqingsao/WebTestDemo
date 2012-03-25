@@ -32,3 +32,24 @@
         <input type="submit" value="Exchange"/>
     </form>
 </div>
+
+
+<div class="exchange-main">
+    <h2>Currency Converter</h2>
+    <form class="exchange" action="../exchange/" method="POST">
+        <ul>
+            <li><label>Amount : </label><input type="text" value=""/></li>
+            <li><label>From : </label><select name="currency">
+                <option>USD</option>
+                <option>RMB</option>
+                <option>AUD</option>
+            </select></li>
+            <li><label>To : </label><select name="currency">
+                <option>USD</option>
+                <option>RMB</option>
+                <option>AUD</option>
+            </select></li>
+            <li><input type="submit" value="Exchange"/></li>
+        </ul>
+    </form>
+</div>
