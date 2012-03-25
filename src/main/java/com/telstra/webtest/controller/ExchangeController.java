@@ -39,7 +39,7 @@ public class ExchangeController {
         double toAmount = exchangeService.exchange(exchangeForm.getFromCurrency(), exchangeForm.getToCurrency(), exchangeForm.getFromAmount());
         exchangeForm.setToAmount(toAmount);
 
-        return new ModelAndView("redirect:exchange/result");
+        return new ModelAndView("exchange/result");
     }
 
     @ModelAttribute("exchange")

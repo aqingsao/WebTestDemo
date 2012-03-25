@@ -30,6 +30,7 @@ public class ExchangePage extends BasePage {
     }
 
     public boolean hasErrorMessage(String message) {
-        return false;
+        String text = webDriver.findElement(By.cssSelector("div.errorMessage")).getText();
+        return text.contains(message);
     }
 }
