@@ -15,4 +15,6 @@ input[type="text"]{border: 1px #949494 solid; padding:4px;}
 .exchange-main ul.exchange select{display:block; border:1px #949494 solid; width:100%; line-height: 20px;}
 .exchange-main ul.exchange .exchange-btn{margin-top:15px;}
 
+.result-main p{ padding:0 10px; margin-top: 8px;}
+.result-main input{ margin:20px 0 0 10px;}
 

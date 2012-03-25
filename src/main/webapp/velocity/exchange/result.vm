@@ -3,4 +3,5 @@
     <p>$!exchange.fromAmount $!exchange.fromCurrency.name()</p>
     <p>can be exchanged to</p>
     <p>$!exchange.toAmount $!exchange.toCurrency.name().</p>
+    <input type="button" value="back">
 </div>
