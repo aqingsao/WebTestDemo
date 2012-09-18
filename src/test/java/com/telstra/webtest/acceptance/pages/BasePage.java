@@ -12,7 +12,7 @@ public abstract class BasePage {
     }
 
     protected String getHost() {
-        return "localhost:8080/WebTestDemo";
+        return "localhost:8081/WebTestDemo";
     }
 
     protected abstract String getPath();

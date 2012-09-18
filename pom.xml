@@ -87,28 +87,28 @@
         </dependency>
     </dependencies>
 
-    <!--<repositories>-->
-    <!--<repository>-->
-    <!--<id>repository.springframework.maven.release</id>-->
-    <!--<name>Spring Framework Maven Release Repository</name>-->
-    <!--<url>http://maven.springframework.org/release</url>-->
-    <!--</repository>-->
-    <!--<repository>-->
-    <!--<id>central</id>-->
-    <!--<name>Maven Repository Switchboard</name>-->
-    <!--<url>repo1.maven.org/maven2/</url>-->
-    <!--</repository>-->
-    <!--<repository>-->
-    <!--<id>java.net-Public</id>-->
-    <!--<name>Maven Java Net Snapshots and Releases</name>-->
-    <!--<url>https://maven.java.net/content/groups/public/</url>-->
-    <!--</repository>-->
-    <!--<repository>-->
-    <!--<id>java.net</id>-->
-    <!--<name>java.net</name>-->
-    <!--<url>http://download.java.net/maven/2</url>-->
-    <!--</repository>-->
-    <!--</repositories>-->
+    <repositories>
+        <repository>
+            <id>repository.springframework.maven.release</id>
+            <name>Spring Framework Maven Release Repository</name>
+            <url>http://maven.springframework.org/release</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <url>repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>java.net-Public</id>
+            <name>Maven Java Net Snapshots and Releases</name>
+            <url>https://maven.java.net/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>java.net</id>
+            <name>java.net</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+    </repositories>
     <build>
         <plugins>
             <plugin>
@@ -148,6 +148,11 @@
                 <artifactId>maven-jetty-plugin</artifactId>
                 <version>6.1.10</version>
                 <configuration>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8081</port>
+                        </connector>
+                    </connectors>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <stopKey>foo</stopKey>
                     <stopPort>9999</stopPort>
