@@ -1,9 +1,8 @@
-package com.telstra.webtest.controller;
+package com.demo.webtest.controller;
 
-import com.telstra.webtest.domain.Currency;
-import com.telstra.webtest.form.ExchangeForm;
-import com.telstra.webtest.form.ExchangeFormBuilder;
-import com.telstra.webtest.services.ExchangeService;
+import com.demo.webtest.domain.Currency;
+import com.demo.webtest.form.ExchangeForm;
+import com.demo.webtest.services.ExchangeService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

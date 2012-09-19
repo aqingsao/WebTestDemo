@@ -1,4 +1,4 @@
-package com.telstra.webtest.utils;
+package com.demo.webtest.utils;
 
 import org.junit.Test;
 

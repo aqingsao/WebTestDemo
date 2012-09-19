@@ -1,7 +1,7 @@
-package com.telstra.webtest.services;
+package com.demo.webtest.services;
 
-import com.telstra.webtest.domain.Currency;
-import com.telstra.webtest.utils.MathUtils;
+import com.demo.webtest.domain.Currency;
+import com.demo.webtest.utils.MathUtils;
 import org.springframework.stereotype.Service;
 
 @Service

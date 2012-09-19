@@ -1,6 +1,6 @@
-package com.telstra.webtest.form;
+package com.demo.webtest.form;
 
-import com.telstra.webtest.domain.Currency;
+import com.demo.webtest.domain.Currency;
 
 public class ExchangeFormBuilder {
 

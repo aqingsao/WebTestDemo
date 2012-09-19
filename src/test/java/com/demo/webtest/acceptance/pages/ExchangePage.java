@@ -1,6 +1,6 @@
-package com.telstra.webtest.acceptance.pages;
+package com.demo.webtest.acceptance.pages;
 
-import com.telstra.webtest.domain.Currency;
+import com.demo.webtest.domain.Currency;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

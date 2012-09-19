@@ -1,9 +1,8 @@
-package com.telstra.webtest.acceptance.webdriver;
+package com.demo.webtest.acceptance.webdriver;
 
-import com.telstra.webtest.acceptance.pages.ExchangePage;
-import com.telstra.webtest.acceptance.pages.ExchangeResultPage;
-import com.telstra.webtest.domain.Currency;
-import org.junit.Ignore;
+import com.demo.webtest.acceptance.pages.ExchangePage;
+import com.demo.webtest.acceptance.pages.ExchangeResultPage;
+import com.demo.webtest.domain.Currency;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

@@ -1,4 +1,4 @@
-package com.telstra.webtest.utils;
+package com.demo.webtest.utils;
 
 public class MathUtils {
     public static double round(double value) {

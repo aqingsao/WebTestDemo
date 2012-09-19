@@ -1,4 +1,4 @@
-package com.telstra.webtest.domain;
+package com.demo.webtest.domain;
 
 public enum Currency {
     RMB(1, "Chinese Yuan"), AUD(6, "Australia Dollar");
